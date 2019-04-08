@@ -5,7 +5,6 @@ import com.credits.model.enums.CreditType;
 import java.util.Scanner;
 
 public class CheckInput {
-    private static CreditType ct;
     private static Scanner scanner = new Scanner(System.in);
 
     public static int checkInteger(String input) {
@@ -24,6 +23,7 @@ public class CheckInput {
     public static CreditType getCreditType(String input) {
         String str;
         System.out.print(input);
+        CreditType ct;
         while (true) {
             str = scanner.next().toUpperCase();
             try {

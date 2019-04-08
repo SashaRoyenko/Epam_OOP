@@ -49,4 +49,5 @@ public class TargetCredit extends Credit {
                 super.toString() +
                 '}';
     }
+
 }

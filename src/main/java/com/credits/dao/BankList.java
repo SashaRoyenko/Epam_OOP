@@ -46,4 +46,5 @@ public class BankList extends BankDao {
                 .setPercent(CreditType.BUSINESS, 1.)
                 .build());
     }
+
 }
