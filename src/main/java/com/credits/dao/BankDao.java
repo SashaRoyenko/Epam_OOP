@@ -7,13 +7,15 @@ import java.util.*;
 
 public class BankDao implements Dao<Bank> {
     protected static List<Bank> bankList = new ArrayList<>();
+
     @Override
     public Bank get(int id) {
         return bankList.get(id);
     }
+
     @Override
-    public void setTargetCreditValues(int sum, int days, CreditType type){
-        for(Bank i : getAll()){
+    public void setTargetCreditValues(int sum, int days, CreditType type) {
+        for (Bank i : getAll()) {
             i.setTargetCredit(sum, days, type);
         }
     }

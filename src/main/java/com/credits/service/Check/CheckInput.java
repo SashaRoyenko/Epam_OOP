@@ -23,17 +23,19 @@ public class CheckInput {
     public static CreditType getCreditType(String input) {
         String str;
         System.out.print(input);
-        CreditType ct;
-        while (true) {
+        CreditType ct = null;
+        boolean flag = false;
+        do {
+            System.out.print(input);
             str = scanner.next().toUpperCase();
             try {
                 ct = CreditType.valueOf(str);
-                break;
+                flag = true;
             } catch (IllegalArgumentException e) {
                 System.out.println("Incorrect input!");
             }
-            System.out.print(input);
-        }
+
+        } while (!flag);
         return ct;
     }
 }

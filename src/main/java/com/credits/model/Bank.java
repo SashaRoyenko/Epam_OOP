@@ -54,20 +54,7 @@ public class Bank {
     }
 
     public Double getCurrentPercent() {
-        switch (targetCredit.getCreditType()) {
-            case CAR:
-                return percent.get(CreditType.CAR);
-            case REALTY:
-                return percent.get(CreditType.REALTY);
-            case CARD:
-                return percent.get(CreditType.CARD);
-            case CASH:
-                return percent.get(CreditType.CASH);
-            case BUSINESS:
-                return percent.get(CreditType.BUSINESS);
-            default:
-                throw new IllegalArgumentException();
-        }
+        return percent.get(targetCredit.getCreditType());
     }
     public void setTargetCredit(int sum, int days, CreditType creditType) {
        this.targetCredit = new TargetCredit(sum, days, creditType);

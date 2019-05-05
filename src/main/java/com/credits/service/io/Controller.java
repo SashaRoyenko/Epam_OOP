@@ -5,14 +5,15 @@ import com.credits.model.Bank;
 import com.credits.model.enums.CreditType;
 import com.credits.service.Check.CheckInput;
 import com.credits.service.comparators.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Controller {
     private static int answer;
     private static Dao<Bank> bankList = new BankList();
 
-    private static void mainMenu() {
-        Output.showMainMenu();
+    private static boolean mainMenu() {
         answer = CheckInput.checkInteger("Enter answer: ");
         switch (answer) {
             case 1:
@@ -22,12 +23,13 @@ public class Controller {
                 chosenMenu();
                 break;
             default:
-                System.exit(0);
+                return false;
         }
+        return true;
     }
 
     private static void chosenMenu() {
-        List<Bank> temp = bankList.getAll();
+        List<Bank> temp = new ArrayList<>(bankList.getAll());
         Output.showChosenMenu();
         answer = CheckInput.checkInteger("Enter answer: ");
         switch (answer) {
@@ -60,8 +62,8 @@ public class Controller {
     }
 
     public static void run() {
-        while (true) {
-            mainMenu();
-        }
+         do {
+             Output.showMainMenu();
+        }while (mainMenu());
     }
 }
