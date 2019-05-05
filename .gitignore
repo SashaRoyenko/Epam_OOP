@@ -1,3 +1,5 @@
 .idea
 EPAM_OOP.iml
+src/main/resources
+out/
 target
